@@ -80,3 +80,23 @@ function run_cpm_advance_block() {
 
 }
 run_cpm_advance_block();
+
+
+function create_block_gutenpride_block_init() {
+    register_block_type( __DIR__ . '/build/blocks/hero-block' );
+    // register_block_type_from_metadata(
+    //             WP_CUSTOM_GUTENBERG_BLOCKS_BOILERPLATE_PATH . 'build/blocks/' . $block_folder
+    //         );
+}
+add_action( 'init', 'create_block_gutenpride_block_init' );
+
+
+
+function myplugin_enqueue_block_editor_assets() {
+    wp_enqueue_script(
+        'cpm-advance-block',
+        plugins_url( '/build/blocks.js', __FILE__ ),
+        array( 'wp-blocks', 'wp-element' )
+    );
+}
+add_action( 'enqueue_block_editor_assets', 'myplugin_enqueue_block_editor_assets' );

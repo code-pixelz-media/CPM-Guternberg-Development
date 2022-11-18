@@ -15,7 +15,7 @@
 		"lint:js": "wp-scripts lint-js",
 		"start:admin": "wp-scripts start src/settings.js",
 		"start:public": "wp-scripts start src/public.js",
-		"start:blocks": "wp-scripts start",
+		"start:blocks": "wp-scripts start src/blocks.js",
 		"start": "npm-run-all --parallel start:admin start:public start:blocks",
 		"packages-update": "wp-scripts packages-update"
 	},
